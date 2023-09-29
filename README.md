@@ -21,11 +21,13 @@ The solution for this project is coded in python using library pygame. There is 
 * Recursion
 
 # Screenshots:
-![Screenshot 2023-09-30 023101](https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/eac83bc1-baa5-4608-814b-f829eccdbfb5)
-![Screenshot 2023-09-30 023154](https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/382fc604-dfa7-471b-9426-32e49050d532)
+![Screenshot 2023-09-30 032933](https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/60ca7656-9751-4af0-8691-26c64ee71086)
+![Screenshot 2023-09-30 033012](https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/1f0b012c-101e-43c6-9d55-5288102c5442)
 
-# Demo:
-https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/4531dfd8-745d-43f5-8ffc-e8974feb1105
+# Video Demo:
+https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/38439a0b-9a70-411b-b6ec-7b100fb65338
+
+
 
 
 
