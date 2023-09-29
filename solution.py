@@ -124,6 +124,7 @@ def draw(win, bar):
     win.fill(BLUE)
 
     pygame.draw.rect(win, DARK_BLUE, (0, 0, 800, 180))
+   
 
     win.blit(project, (30, 20))
 
@@ -137,6 +138,7 @@ def draw(win, bar):
 
     for i in bar:
         i.draw(win)
+    pygame.time.wait(6)
 
     pygame.display.update()
 
