@@ -10,17 +10,17 @@ FONT_MEDIUM = pygame.font.SysFont('comicsans', 30)
 FONT_SMALL = pygame.font.SysFont('comicsans', 20)
 
 win = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('Sorting')
+pygame.display.set_caption('Sorting visualizer')
 
-name = FONT_MEDIUM.render('VISULIZER', 1, WHITE)
-project = FONT_BIG.render('SORTING', 1, WHITE)
-sorting = [FONT_SMALL.render('1. Selection Sort', 1, WHITE),
-           FONT_SMALL.render('2. Bubble Sort', 1, WHITE),
-           FONT_SMALL.render('3. Merge Sort', 1, WHITE),
-           FONT_SMALL.render('4. Quick Sort', 1, WHITE),
-           FONT_SMALL.render('5. Heap Sort', 1, WHITE),
-           FONT_SMALL.render('6. Insertion Sort', 1, WHITE)]
-reset = FONT_SMALL.render('0. Reset', 1, WHITE)
+name = FONT_MEDIUM.render('VISUALIZER', 1,LIGHT_GREEN)
+project = FONT_BIG.render('SORTING', 1, LIGHT_GREEN)
+sorting = [FONT_SMALL.render('1. Selection Sort', 1, LIGHT_GREEN),
+           FONT_SMALL.render('2. Bubble Sort', 1, LIGHT_GREEN),
+           FONT_SMALL.render('3. Merge Sort', 1, LIGHT_GREEN),
+           FONT_SMALL.render('4. Quick Sort', 1, LIGHT_GREEN),
+           FONT_SMALL.render('5. Heap Sort', 1, LIGHT_GREEN),
+           FONT_SMALL.render('6. Insertion Sort', 1, LIGHT_GREEN)]
+reset = FONT_SMALL.render('0. Reset', 1, LIGHT_GREEN)
 
 
 class Bar:
@@ -29,7 +29,7 @@ class Bar:
         self.y = y
         self.width = width
         self.height = height
-        self.color = LIGHT_BLUE
+        self.color = LIGHT_YELLOW
         self.value = value
 
     def reset(self, num):
@@ -50,7 +50,7 @@ class Bar:
         self.color = L_BLUE
 
     def back(self):
-        self.color = LIGHT_BLUE
+        self.color = LIGHT_YELLOW
 
 
 sort = [x for x in range(1, NUM_BAR + 2)]
