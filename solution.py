@@ -59,7 +59,7 @@ class Bar:
         self.y = y
         self.width = width
         self.height = height
-        self.color = LIGHT_BLUE
+        self.color = WHITE
         self.value = value
 
     def reset(self, num):
@@ -138,7 +138,6 @@ def check():
 
 #draw function for the screen
 def draw(win, bar):
-    # set global variables for all elements before drawing
     global reset
     global name
     global sorting
@@ -165,9 +164,6 @@ def draw(win, bar):
     pygame.display.update()
 
 def selection(bar,win):
-    #Set global variables to control
-    #the quitting function and shuffle function for the list
-    #before running
     global SORTED
     SORTED = True
     global RUN
@@ -199,9 +195,6 @@ def selection(bar,win):
         bar[i].reset(i).done()
 
 def bubble(bar, win):
-    # Set global variables to control
-    # the quitting function and shuffle function for the list
-    # before running
     global RUN
     global SORTED
     SORTED = True
@@ -272,9 +265,6 @@ def merge(bar, left, mid, right, win):
 
 
 def merge_sort(bar, left, right, win):
-    # Set global variables to control
-    # the quitting function and shuffle function for the list
-    # before running
     global SORTED
     SORTED = True
     global RUN
@@ -292,9 +282,6 @@ def merge_sort(bar, left, right, win):
         merge(bar, left, mid, right, win)
 
 def quick_sort(bar, low, high, win):
-    # Set global variables to control
-    # the quitting function and shuffle function for the list
-    # before running
     global RUN
     global SORTED
     SORTED = True
@@ -348,9 +335,6 @@ def partition(bar, low, high, win):
     return i
 
 def insertion(bar, win):
-    # Set global variables to control
-    # the quitting function and shuffle function for the list
-    # before running
     global RUN
     global SORTED
     SORTED = True
@@ -380,9 +364,6 @@ def insertion(bar, win):
         draw(win, bar)
 
 def heap_sort(bar, win):
-    # Set global variables to control
-    # the quitting function and shuffle function for the list
-    # before running
     global RUN
     global SORTED
     SORTED = True
