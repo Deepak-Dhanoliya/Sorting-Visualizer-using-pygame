@@ -8,3 +8,20 @@ The solution for this project is coded in python using library pygame. There is 
 4. Quick sort
 5. Heap sort
 6. Insertion sort
+
+# Technology used:
+* Python
+* Pygame
+
+# Concepts in the project:
+* Data strucutre (list, tuple, Binary Heap)
+* Object-Oriented Programming (OOP)
+* Conditional statements
+* Function from pygame library
+* Recursion
+
+# Screenshots:
+![Screenshot 2023-09-30 023101](https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/eac83bc1-baa5-4608-814b-f829eccdbfb5)
+![Screenshot 2023-09-30 023154](https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/382fc604-dfa7-471b-9426-32e49050d532)
+
+
