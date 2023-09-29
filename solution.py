@@ -1,45 +1,16 @@
 import pygame
 import random
+from colors import *
+from settings import *
 
 pygame.init()
-
-WIDTH, HEIGHT = 800, 700
 
 FONT_BIG = pygame.font.SysFont('comicsans', 40)
 FONT_MEDIUM = pygame.font.SysFont('comicsans', 30)
 FONT_SMALL = pygame.font.SysFont('comicsans', 20)
 
-
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Sorting')
-
-LIGHT_BLUE = (64,224,208)
-BLUE = (41,41,64)
-DARK_BLUE = (15,15,38)
-BLACK_BLUE = (5,5,28)
-RED =  (255, 10 ,10)
-GREEN = (10, 255, 10)
-WHITE = (255, 255, 255)
-L_BLUE = (20, 20, 255)
-ORANGE = (255, 100, 0)
-
-NUM_BAR = 170
-BORDER = 25
-
-SORTED = False
-
-SPACE = (WIDTH - 25 - BORDER) / NUM_BAR
-
-BAR_WIDTH, BAR_HEIGHT = SPACE - 1.2, 2.87
-
-
-FPS = 80
-
-RUN = True
-
-DOWN = 25
-
-COUNT = 0
 
 name = FONT_MEDIUM.render('VISULIZER', 1, WHITE)
 project = FONT_BIG.render('SORTING', 1, WHITE)
@@ -51,15 +22,14 @@ sorting = [FONT_SMALL.render('1. Selection Sort', 1, WHITE),
            FONT_SMALL.render('6. Insertion Sort', 1, WHITE)]
 reset = FONT_SMALL.render('0. Reset', 1, WHITE)
 
+
 class Bar:
-
-
     def __init__(self, x, y, width, height, value):
         self.x = x
         self.y = y
         self.width = width
         self.height = height
-        self.color = WHITE
+        self.color = LIGHT_BLUE
         self.value = value
 
     def reset(self, num):
@@ -67,7 +37,8 @@ class Bar:
         return self
 
     def draw(self, win):
-        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height))
+        pygame.draw.rect(
+            win, self.color, (self.x, self.y, self.width, self.height))
 
     def check(self):
         self.color = RED
@@ -81,9 +52,12 @@ class Bar:
     def back(self):
         self.color = LIGHT_BLUE
 
+
 sort = [x for x in range(1, NUM_BAR + 2)]
 random.shuffle(sort)
-bar = [Bar((BORDER + i * SPACE), (HEIGHT - DOWN - (BAR_HEIGHT * sort[i])), BAR_WIDTH, BAR_HEIGHT * sort[i], sort[i]) for i in range(NUM_BAR)]
+bar = [Bar((BORDER + i * SPACE), (HEIGHT - DOWN - (BAR_HEIGHT * sort[i])),
+           BAR_WIDTH, BAR_HEIGHT * sort[i], sort[i]) for i in range(NUM_BAR)]
+
 
 def main(win):
     clock = pygame.time.Clock()
@@ -109,10 +83,10 @@ def main(win):
             SORTED = False
         if keys[pygame.K_1]:
             check()
-            selection(bar,win)
+            selection(bar, win)
         if keys[pygame.K_2]:
             check()
-            bubble(bar,win)
+            bubble(bar, win)
         if keys[pygame.K_3]:
             check()
             merge_sort(bar, 0, len(bar) - 1, win)
@@ -128,15 +102,19 @@ def main(win):
 
     pygame.quit()
 
+
 def check():
     global SORTED
     global bar
     if SORTED:
         SORTED = False
         random.shuffle(sort)
-        bar = [Bar((BORDER + i * SPACE), (HEIGHT - DOWN - (BAR_HEIGHT * sort[i])), BAR_WIDTH, BAR_HEIGHT * sort[i], sort[i]) for i in range(NUM_BAR)]
+        bar = [Bar((BORDER + i * SPACE), (HEIGHT - DOWN - (BAR_HEIGHT * sort[i])),
+                   BAR_WIDTH, BAR_HEIGHT * sort[i], sort[i]) for i in range(NUM_BAR)]
 
-#draw function for the screen
+# draw function for the screen
+
+
 def draw(win, bar):
     global reset
     global name
@@ -151,8 +129,7 @@ def draw(win, bar):
 
     win.blit(name, (40, 90))
 
-    pygame.draw.rect(win, BLUE,(250, 15, 5, 150))
-
+    pygame.draw.rect(win, BLUE, (250, 15, 5, 150))
 
     for i in range(len(sorting)):
         win.blit(sorting[i], (270, 13 + (25 * i)))
@@ -163,7 +140,8 @@ def draw(win, bar):
 
     pygame.display.update()
 
-def selection(bar,win):
+
+def selection(bar, win):
     global SORTED
     SORTED = True
     global RUN
@@ -176,7 +154,7 @@ def selection(bar,win):
                 RUN = False
                 break
         min = i
-        for u in range(i + 1,len(bar)):
+        for u in range(i + 1, len(bar)):
 
             bar[min].match()
             bar[u].check()
@@ -193,6 +171,7 @@ def selection(bar,win):
         bar[i] = temp
         bar[min].reset(min)
         bar[i].reset(i).done()
+
 
 def bubble(bar, win):
     global RUN
@@ -221,6 +200,7 @@ def bubble(bar, win):
                 bar[j + 1].reset(j + 1)
 
         bar[len(bar) - 1 - i].done()
+
 
 def merge(bar, left, mid, right, win):
     temp = []
@@ -281,6 +261,7 @@ def merge_sort(bar, left, right, win):
                 break
         merge(bar, left, mid, right, win)
 
+
 def quick_sort(bar, low, high, win):
     global RUN
     global SORTED
@@ -308,6 +289,7 @@ def quick_sort(bar, low, high, win):
 
         quick_sort(bar, pi, high, win)
 
+
 def partition(bar, low, high, win):
     i = low
     pivot = bar[high]
@@ -321,7 +303,6 @@ def partition(bar, low, high, win):
         bar[i].back()
         if bar[j].value < pivot.value:
 
-
             bar[i], bar[j] = bar[j], bar[i]
             bar[i].reset(i)
             bar[j].reset(j)
@@ -333,6 +314,7 @@ def partition(bar, low, high, win):
     draw(win, bar)
     bar[high].reset(high)
     return i
+
 
 def insertion(bar, win):
     global RUN
@@ -363,6 +345,7 @@ def insertion(bar, win):
         pygame.time.delay(1)
         draw(win, bar)
 
+
 def heap_sort(bar, win):
     global RUN
     global SORTED
@@ -378,6 +361,7 @@ def heap_sort(bar, win):
         bar[i].done()
         draw(win, bar)
         heapify(bar, i, 0, win)
+
 
 def heapify(bar, n, i, win):
     largest = i
@@ -405,4 +389,4 @@ def heapify(bar, n, i, win):
 
 
 if __name__ == "__main__":
-  main(win)
+    main(win)
