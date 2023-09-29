@@ -24,4 +24,9 @@ The solution for this project is coded in python using library pygame. There is 
 ![Screenshot 2023-09-30 023101](https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/eac83bc1-baa5-4608-814b-f829eccdbfb5)
 ![Screenshot 2023-09-30 023154](https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/382fc604-dfa7-471b-9426-32e49050d532)
 
+# Demo:
+https://github.com/Deepak-Dhanoliya/Sorting-Visualizer-using-pygame/assets/112553984/4531dfd8-745d-43f5-8ffc-e8974feb1105
+
+
+
 
